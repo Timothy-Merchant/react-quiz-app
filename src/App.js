@@ -16,16 +16,22 @@ function App() {
     <Router>
       <>
         <Switch>
-          <Route path="/quiz">
-            <Multiplier
-              x={5}
-              y={7}
-            />
+          <Route path="/even-clicks">
             <EvenClicks />
-            <CountBy step={5} />
-            <HideMe>Blah blah blah</HideMe>
-            <MinimumLength length={30} />
           </Route>
+          <Route path="/hide-me">
+            <HideMe>Blah blah blah</HideMe>
+          </Route>
+          <Route path="/count-by/:number" render={({ match }) =>
+            (<CountBy step={match.params.number} />)}>
+          </Route>
+          <Route path="/minimum/:number" render={({ match }) =>
+            (<MinimumLength length={match.params.number} />)
+          }>
+          </Route>
+          <Route path="/multiplier/:first/:second" render={({ match }) =>
+            (<Multiplier x={match.params.first} y={match.params.second} />)}>
+          </Route>          
           <FourOhFour />
         </Switch>
       </>

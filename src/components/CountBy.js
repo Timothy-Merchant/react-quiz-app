@@ -6,7 +6,7 @@ class CountBy extends Component {
         super(props)
 
         this.state = {
-            number: 0
+            number: 0            
         }
 
         this.handleClick = this.handleClick.bind(this);
@@ -14,7 +14,7 @@ class CountBy extends Component {
 
     handleClick(e) {
         this.setState({
-            number: this.state.number + this.props.step
+            number: this.state.number + Number(this.props.step)
         })
     }
 
