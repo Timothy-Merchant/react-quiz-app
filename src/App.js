@@ -1,24 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+} from "react-router-dom";
+import Multiplier from './components/Multiplier';
+import EvenClicks from './components/EvenClicks';
+import CountBy from './components/CountBy';
+import HideMe from './components/HideMe';
+import MinimumLength from './components/MinimumLength';
+import FourOhFour from './components/FourOhFour';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <>
+        <Switch>
+          <Route path="/quiz">
+            <Multiplier
+              x={5}
+              y={7}
+            />
+            <EvenClicks />
+            <CountBy step={5} />
+            <HideMe>Blah blah blah</HideMe>
+            <MinimumLength length={30} />
+          </Route>
+          <FourOhFour />
+        </Switch>
+      </>
+    </Router>
   );
 }
 
