@@ -16,8 +16,6 @@ class MinimumLength extends Component {
 
     handleInput(e) {
         this.setState({ length: e.currentTarget.value.length })
-        console.log(this.props.length);
-        console.log(this.state.length);
     }
 
     render() {
